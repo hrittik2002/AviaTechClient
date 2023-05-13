@@ -12,8 +12,8 @@ const Navbar2 = () => {
       <div className={styles.logoContainer}>AviaTech</div>
       <div className={styles.navItems}>
         <Link className={styles.navItem} to="/fab">Fabrication</Link>
-        <Link className={styles.navItem} to="/">logout</Link>
-        <Link className={styles.navItem} to="/">logout</Link>
+        <Link className={styles.navItem} to="/sub">SubAssembly</Link>
+        <Link className={styles.navItem} to="/">Assembly</Link>
       </div>
     </div>
   

@@ -15,8 +15,7 @@ import {
 import { getAllBom, getAllItems, getAllManufacturing } from "../../config/apiCalls";
 
 const Fabrication = () => {
-    const [items , setItems] = useState([{
-    }]);
+    const [items , setItems] = useState([{}]);
     const [manufacturing , setManufacturing] = useState([]);
     const [bom , setBom] = useState([{}]);
 
@@ -27,7 +26,8 @@ const Fabrication = () => {
         setManufacturing(res2.data);
         const res3 = await getAllBom();
         setBom(res3.data);
-        console.log(res3.data)
+        
+        console.log(res2.data)
     }
     useEffect(()=>{
         getData();
@@ -39,7 +39,7 @@ const Fabrication = () => {
       <div className={styles.ItemsContainer}>
         <div className={styles.heading}>Items</div>
         <TableContainer className={styles.tableContainer}>
-          <Table variant="simple" className={styles.table}>
+          <Table variant='striped' colorScheme='teal' className={styles.table}>
             
             <Thead className={styles.thead}>
               <Tr>
@@ -67,7 +67,6 @@ const Fabrication = () => {
                             <Td>{item.price}</Td>
                             <Td>{item.supplierId}</Td>
                             <Td>{item.leadTime}</Td>
-                            <Td>{item.safetyStockLevel}</Td>
                         </Tr>
                     ))
                 }
@@ -89,14 +88,11 @@ const Fabrication = () => {
             
             <Thead className={styles.thead}>
               <Tr>
-                <Th>SupplierId</Th>
-                <Th>componentDescription</Th>
-                <Th>componentName</Th>
-                <Th>cost</Th>
-                <Th>createdAt</Th>
-                <Th>isDefault</Th>
-                <Th>leadTime</Th>
-                <Th>unitOfMeasure</Th>
+                <Th>productionCost</Th>
+                <Th>productionQuantity</Th>
+                <Th>scrapPercentage</Th>
+                <Th>startDate</Th>
+                <Th>endDate</Th>
               </Tr>
             </Thead>
             <Tbody className={styles.tbody}>
@@ -109,14 +105,11 @@ const Fabrication = () => {
                     manufacturing.map((item , idx)=>(
                         
                         <Tr key={idx}>
-                            <Td>{item.SupplierId}</Td>
-                            <Td>{item.componentDescription}</Td>
-                            <Td>{item.componentName}</Td>
-                            <Td>{item.cost}</Td>
-                            <Td>{item.createdAt}</Td>
-                            <Td>{item.isDefault}</Td>
-                            <Td>{item.leadTime}</Td>
-                            <Td>{item.uniteOfMeasure}</Td>
+                            <Td>{item.productionCost}</Td>
+                            <Td>{item.productionQuantity}</Td>
+                            <Td>{item.scrapPercentage}</Td>
+                            <Td>{item.startDate}</Td>
+                            <Td>{item.endDate}</Td>
                         </Tr>
                     ))
                 }
@@ -132,7 +125,7 @@ const Fabrication = () => {
       </div>
 
       <div className={styles.ItemsContainer}>
-        <div className={styles.heading}>Items</div>
+        <div className={styles.heading}>Bills Of Management</div>
         <TableContainer className={styles.tableContainer}>
           <Table variant="simple" className={styles.table}>
             

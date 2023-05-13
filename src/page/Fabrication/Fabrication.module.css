@@ -9,9 +9,14 @@
 }
 .tbody{
     background-color: rgba(128, 128, 128, 0.288);
+
 }
 .heading{
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 1px;
+}
+.tbody Tr{
+    
+
 }
