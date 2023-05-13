@@ -1,25 +1,20 @@
 import React from "react";
-import styles from './Navbar.module.css'
 import { Link } from "react-router-dom";
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    useDisclosure,
-    Button,
-  } from '@chakra-ui/react'
+
 
 const Navbar = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+
 
   return (
     <>
-    
-    
+    <div className={styles.navContainer}>
+      <div className={styles.logoContainer}>AviaTech</div>
+      <div className={styles.navItems}>
+        <Link className={styles.navItem} to="/">login</Link>
+        <Link className={styles.navItem} to="/search">register</Link>
+      </div>
+    </div>
+  
     </>
   );
 };
