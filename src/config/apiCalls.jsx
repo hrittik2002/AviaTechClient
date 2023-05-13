@@ -104,3 +104,21 @@ export const getSupplyPlanningData = async(req, res) =>{
         console.log(err);
       }
 }
+
+export const loginApiCall = async(username , password , type) =>{
+  try{
+      const res = await axios.post(`http://127.0.0.1:5000/api/login/${type}`,
+      {
+        email : username ,
+        password : password
+      }
+      )
+      console.log(res);
+      return res;
+    
+      
+    }
+    catch(err){
+      console.log(err);
+    }
+}

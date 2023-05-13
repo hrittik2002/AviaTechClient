@@ -13,7 +13,8 @@ const Navbar2 = () => {
       <div className={styles.navItems}>
         <Link className={styles.navItem} to="/fab">Fabrication</Link>
         <Link className={styles.navItem} to="/sub">SubAssembly</Link>
-        <Link className={styles.navItem} to="/">Assembly</Link>
+        <Link className={styles.navItem} to="/as">Assembly</Link>
+        <Link className={styles.navItem} to="/forcast">Forcast</Link>
       </div>
     </div>
   

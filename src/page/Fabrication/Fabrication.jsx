@@ -38,20 +38,20 @@ const Fabrication = () => {
 
       <div className={styles.ItemsContainer}>
         <div className={styles.heading}>Items</div>
-        <TableContainer className={styles.tableContainer}>
-          <Table variant='striped' colorScheme='teal' className={styles.table}>
+       
+          <table className={styles.borderedTable}>
             
-            <Thead className={styles.thead}>
-              <Tr>
-                <Th>unitOfMeasure</Th>
-                <Th>weight</Th>
-                <Th>dimensions</Th>
-                <Th>price</Th>
-                <Th>supplierId</Th>
-                <Th>leadTime</Th>
-              </Tr>
-            </Thead>
-            <Tbody className={styles.tbody}>
+            
+              <tr>
+                <th>unitOfMeasure</th>
+                <th>weight</th>
+                <th>dimensions</th>
+                <th>price</th>
+                <th>supplierId</th>
+                <th>leadTime</th>
+              </tr>
+            
+           
                 {
                     items.length === 0 ?
                     "no data found"
@@ -60,14 +60,14 @@ const Fabrication = () => {
                     {
                     items.map((item , idx)=>(
                         
-                        <Tr key={idx}>
-                            <Td>{item.unitOfMeasure}</Td>
-                            <Td>{item.weight}</Td>
-                            <Td>{item.dimensions}</Td>
-                            <Td>{item.price}</Td>
-                            <Td>{item.supplierId}</Td>
-                            <Td>{item.leadTime}</Td>
-                        </Tr>
+                        <tr key={idx}>
+                            <td>{item.unitOfMeasure}</td>
+                            <td>{item.weight}</td>
+                            <td>{item.dimensions}</td>
+                            <td>{item.price}</td>
+                            <td>{item.supplierId}</td>
+                            <td>{item.leadTime}</td>
+                        </tr>
                     ))
                 }
                     </>
@@ -75,27 +75,26 @@ const Fabrication = () => {
                 
              
               
-            </Tbody>
             
-          </Table>
-        </TableContainer>
+            
+          </table>
+      
       </div>
 
       <div className={styles.ManufacturingContainer}>
         <div className={styles.heading}>Manufacturing</div>
-        <TableContainer className={styles.tableContainer}>
-          <Table variant="simple" className={styles.table}>
+        
+          <table className={styles.borderedTable}>
             
-            <Thead className={styles.thead}>
-              <Tr>
-                <Th>productionCost</Th>
-                <Th>productionQuantity</Th>
-                <Th>scrapPercentage</Th>
-                <Th>startDate</Th>
-                <Th>endDate</Th>
-              </Tr>
-            </Thead>
-            <Tbody className={styles.tbody}>
+              <tr>
+                <th>productionCost</th>
+                <th>productionQuantity</th>
+                <th>scrapPercentage</th>
+                <th>startDate</th>
+                <th>endDate</th>
+              </tr>
+
+  
                 {
                     manufacturing.length === 0 ?
                     "no data found"
@@ -104,13 +103,13 @@ const Fabrication = () => {
                     {
                     manufacturing.map((item , idx)=>(
                         
-                        <Tr key={idx}>
-                            <Td>{item.productionCost}</Td>
-                            <Td>{item.productionQuantity}</Td>
-                            <Td>{item.scrapPercentage}</Td>
-                            <Td>{item.startDate}</Td>
-                            <Td>{item.endDate}</Td>
-                        </Tr>
+                        <tr key={idx}>
+                            <td>{item.productionCost}</td>
+                            <td>{item.productionQuantity}</td>
+                            <td>{item.scrapPercentage}</td>
+                            <td>{item.startDate}</td>
+                            <td>{item.endDate}</td>
+                        </tr>
                     ))
                 }
                     </>
@@ -118,29 +117,29 @@ const Fabrication = () => {
                 
               
               
-            </Tbody>
+
             
-          </Table>
-        </TableContainer>
+          </table>
+
       </div>
 
       <div className={styles.ItemsContainer}>
         <div className={styles.heading}>Bills Of Management</div>
-        <TableContainer className={styles.tableContainer}>
-          <Table variant="simple" className={styles.table}>
+       
+          <table className={styles.borderedTable}>
             
-            <Thead className={styles.thead}>
-              <Tr>
-                <Th>SupplierId</Th>
-                <Th>componentDescription</Th>
-                <Th>componentName</Th>
-                <Th>cost</Th>
-                <Th>isDefault</Th>
-                <Th>leadTime</Th>
-                <Th>unitOfMeasure</Th>
-              </Tr>
-            </Thead>
-            <Tbody className={styles.tbody}>
+            
+              <tr>
+                <th>SupplierId</th>
+                <th>componentDescription</th>
+                <th>componentName</th>
+                <th>cost</th>
+                <th>isDefault</th>
+                <th>leadTime</th>
+                <th>unitOfMeasure</th>
+              </tr>
+           
+           
                 {
                     bom.length === 0 ?
                     "no data found"
@@ -149,15 +148,15 @@ const Fabrication = () => {
                     {
                     bom.map((item , idx)=>(
                         
-                        <Tr key={idx}>
-                            <Td>{item.SupplierId}</Td>
-                            <Td>{item.componentDescription}</Td>
-                            <Td>{item.componentName}</Td>
-                            <Td>{item.cost}</Td>
-                            <Td>{item.isDefault ? "TRUE" : "FALSE"}</Td>
-                            <Td>{item.leadTime}</Td>
-                            <Td>{item.unitOfMeasure}</Td>
-                        </Tr>
+                        <tr key={idx}>
+                            <td>{item.SupplierId}</td>
+                            <td>{item.componentDescription}</td>
+                            <td>{item.componentName}</td>
+                            <td>{item.cost}</td>
+                            <td>{item.isDefault ? "TRUE" : "FALSE"}</td>
+                            <td>{item.leadTime}</td>
+                            <td>{item.unitOfMeasure}</td>
+                        </tr>
                     ))
                 }
                     </>
@@ -165,10 +164,10 @@ const Fabrication = () => {
                 
              
               
-            </Tbody>
+          
             
-          </Table>
-        </TableContainer>
+          </table>
+        
       </div>
 
     </div>
