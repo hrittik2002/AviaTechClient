@@ -1,9 +1,11 @@
 import axios from 'axios';
+//http://127.0.0.1:5000
+const domainName = 'https://washing-machine-supply-chain-rest-api-ihmq.vercel.app';
 
 // get all items
 export const getAllItems = async() =>{
     try{
-        const res = await axios.get(`http://127.0.0.1:5000/api/item/viewAll`)
+        const res = await axios.get(`${domainName}/api/item/viewAll`)
          console.log(res);
         return res;
       }
@@ -15,7 +17,7 @@ export const getAllItems = async() =>{
 // get all manufacturing
 export const getAllManufacturing = async() => {
     try{
-        const res = await axios.get(`http://127.0.0.1:5000/api/manufacturing/getAll`)
+        const res = await axios.get(`${domainName}/api/manufacturing/getAll`)
          console.log(res);
         return res;
       }
@@ -26,7 +28,7 @@ export const getAllManufacturing = async() => {
 // get all 
 export const getAllBom = async() => {
     try{
-        const res = await axios.get(`http://127.0.0.1:5000/api/bom/getAll`)
+        const res = await axios.get(`${domainName}/api/bom/getAll`)
          console.log(res);
         return res;
       }
@@ -38,7 +40,7 @@ export const getAllBom = async() => {
 // get process 
 export const getProcessData = async(req, res) =>{
     try{
-        const res = await axios.get(`http://127.0.0.1:5000/api/process/getAll`)
+        const res = await axios.get(`${domainName}/api/process/getAll`)
          console.log(res);
         return res;
       }
@@ -50,7 +52,7 @@ export const getProcessData = async(req, res) =>{
 // get sub process
 export const getSubProcessData = async(req, res) =>{
     try{
-        const res = await axios.get(`http://127.0.0.1:5000/api/subProcess/getAll`)
+        const res = await axios.get(`${domainName}/api/subProcess/getAll`)
          console.log(res);
         return res;
       }
@@ -62,7 +64,7 @@ export const getSubProcessData = async(req, res) =>{
 //http://127.0.0.1:5000/api/subProcessItem/add
 export const getSubProcessItemData = async(req, res) =>{
     try{
-        const res = await axios.get(`http://127.0.0.1:5000/api/subProcessItem/getAll`)
+        const res = await axios.get(`${domainName}/api/subProcessItem/getAll`)
         console.log(res);
         return res;
       }
@@ -73,7 +75,7 @@ export const getSubProcessItemData = async(req, res) =>{
 //http://127.0.0.1:5000/api/fulfillment/getAll
 export const getFulfillmentData = async(req, res) =>{
     try{
-        const res = await axios.get(`http://127.0.0.1:5000/api/fulfillment/getAll`)
+        const res = await axios.get(`${domainName}/api/fulfillment/getAll`)
         console.log(res);
         return res;
       }
@@ -84,7 +86,7 @@ export const getFulfillmentData = async(req, res) =>{
 ///api/HistoryData
 export const getHistoryData = async(req, res) =>{
     try{
-        const res = await axios.get(`http://127.0.0.1:5000/api/HistoryData/getAll`)
+        const res = await axios.get(`${domainName}/api/HistoryData/getAll`)
         console.log(res);
         return res;
       }
@@ -96,7 +98,7 @@ export const getHistoryData = async(req, res) =>{
 // 
 export const getSupplyPlanningData = async(req, res) =>{
     try{
-        const res = await axios.get(`http://127.0.0.1:5000/api/SupplyPlanning/getAll`)
+        const res = await axios.get(`${domainName}/api/SupplyPlanning/getAll`)
         console.log(res);
         return res;
       }
@@ -107,7 +109,7 @@ export const getSupplyPlanningData = async(req, res) =>{
 
 export const loginApiCall = async(username , password , type) =>{
   try{
-      const res = await axios.post(`http://127.0.0.1:5000/api/login/${type}`,
+      const res = await axios.post(`${domainName}/api/login/${type}`,
       {
         email : username ,
         password : password
